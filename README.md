@@ -1,1 +1,1 @@
-# hylauescanariensis
+# Competition Hylaeus canariensis and honeybees
