@@ -1,6 +1,4 @@
-# Effects of Honey Bee Apiaries on *Hyla canariensis*
-
-# Honey Bee Apiaries and *Hyla canariensis*
+# Effects of Honey Bee Apiaries on *Hylaeus canariensis*
 
 This repository contains the R script and dataset used to analyse productivity, development, morphological traits, cuticular hydrocarbon (CHC) profiles, and floral resource overlap in *Hyla canariensis* in relation to distance from honey bee apiaries.
 
