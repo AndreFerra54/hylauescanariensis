@@ -1,142 +1,132 @@
 # Effects of Honey Bee Apiaries on *Hyla canariensis*
 
-## Analyses
+# Honey Bee Apiaries and *Hyla canariensis*
 
-The script is organized into five main analytical sections:
+This repository contains the R script and dataset used to analyse productivity, development, morphological traits, cuticular hydrocarbon (CHC) profiles, and floral resource overlap in *Hyla canariensis* in relation to distance from honey bee apiaries.
 
-### 1. Productivity
-- Analysis of male, female, and total individual counts in relation to distance from apiaries.
-- Generalized linear models (GLMs) with Poisson distributions.
-- Binomial GLMs to investigate sex ratio variation.
-- Visualization of productivity patterns across distances and years (2020–2021).
+---
 
-### 2. Development and Emergence
-- Analysis of brood cell completion dynamics.
-- Generalized linear mixed models (GLMMs) using negative binomial distributions.
-- Evaluation of the effects of distance from apiaries and the number of active honey bee hives.
-- Accounting for hierarchical structure through random effects.
+## Associated publication
 
-### 3. Morphology
-- Analysis of morphological traits in relation to distance and sex.
-- Linear mixed-effects models.
-- Non-metric multidimensional scaling (NMDS).
-- PERMANOVA and multivariate dispersion analyses.
-- Functional trait space analyses and functional richness (FRic) estimation.
+**Title:** *Proximity to apiaries affect fitness, morphology, and cuticular hydrocarbon profiles of an insular, endemic wild bee species*
 
-### 4. Cuticular Hydrocarbon (CHC) Profiles
-- Analysis of CHC diversity and composition.
-- Linear mixed-effects models investigating distance and sex effects.
-- NMDS and PERMANOVA to assess differences in chemical profiles.
-- SIMPER analyses to identify compounds contributing to dissimilarities.
-- Additional models for the most influential compounds.
+**Authors:** *To be added*
 
-### 5. Floral Competition and Resource Overlap
-- Construction of plant–insect interaction networks for 2019 and 2020.
-- Estimation of niche overlap using Pianka's index.
-- Assessment of resource overlap in relation to distance from apiaries and the number of active honey bee hives.
+**Journal:** *To be added*
 
-## Repository Structure
+**Year:** *To be added*
 
-```text
-.
-├── README.md
-├── Script.R
-├── Dataset_Hcanariensis.xlsx
-├── figures/
-└── results/
-```
+**DOI:** *To be added*
 
-The `figures/` and `results/` directories are automatically created by the script if they do not already exist.
+---
+
+## Necessary files to run the analyses
+
+* `Script.R` → Main script for the complete analytical workflow
+* `Dataset_Hcanariensis.xlsx` → Dataset containing metadata, hive activity, emergence, productivity, morphology, CHC profiles, and plant–insect interaction data
+
+When the script is executed, the following folders will be automatically created:
+
+* `results/` → Statistical outputs, model summaries, and supplementary tables
+* `figures/` → Graphical outputs and publication-ready figures
+
+---
+
+## Workflow overview
+
+1. Download the repository files
+2. Place `Script.R` and `Dataset_Hcanariensis.xlsx` in the same folder
+3. Open the script in RStudio
+4. Run the script sequentially following the numbered sections
+
+The analysis pipeline is organized into modular sections.
+
+---
+
+* **0 – Prepare the environment** → Installs and loads required packages, creates output directories, imports the datasets, prepares variables, and associates the number of active apiaries with the closest recorded sampling day.
+
+* **1 – Productivity analyses** → Analyses male, female, and total productivity in relation to distance from apiaries using Poisson GLMs and binomial GLMs for sex ratio. Generates productivity plots for 2020 and 2021.
+
+* **2 – Evolution and emergence analyses** → Investigates brood cell completion dynamics in relation to distance from apiaries and the number of active honey bee hives using negative binomial GLMMs.
+
+* **3 – Morphological analyses** → Investigates morphological traits in relation to distance and sex using linear mixed models, NMDS, PERMANOVA, multivariate dispersion analyses, and functional trait space analyses.
+
+* **4 – Cuticular hydrocarbon (CHC) analyses** → Analyses CHC diversity, composition, and individual compounds using linear mixed models, NMDS, PERMANOVA, SIMPER, and additional models on the most important compounds.
+
+* **5 – Floral competition analyses** → Constructs plant–insect interaction networks for 2019 and 2020, estimates niche overlap using Pianka's index, and investigates resource overlap in relation to distance from apiaries and the number of active honey bee hives.
+
+---
+
+## Main outputs
+
+### Results
+
+* Productivity GLM summaries
+* Sex ratio GLM results
+* Emergence GLMM summaries
+* Morphological linear mixed model outputs
+* Morphological summary statistics
+* Morphological PERMANOVA results
+* Functional richness summaries
+* CHC linear mixed model outputs
+* CHC summary statistics
+* CHC PERMANOVA results
+* SIMPER analyses
+* Linear mixed model results for selected CHC compounds
+* Floral resource overlap statistics
+
+### Figures
+
+* Male and female productivity plots
+* Total productivity plots
+* Brood cell evolution plots
+* Morphological trait regression plots
+* Morphological NMDS ordinations
+* Functional richness plots
+* CHC diversity and composition plots
+* CHC NMDS ordinations
+* Selected CHC compound plots
+* Plant–insect interaction networks for 2019 and 2020
+
+---
 
 ## Requirements
 
-The analyses are performed in R and require the following packages:
+The script automatically installs missing CRAN packages.
 
-- `openxlsx`
-- `readxl`
-- `writexl`
-- `dplyr`
-- `tidyr`
-- `purrr`
-- `tibble`
-- `scales`
-- `broom.mixed`
-- `stats`
-- `glmmTMB`
-- `vegan`
-- `spaa`
-- `bipartite`
-- `funspace`
-- `car`
-- `performance`
-- `ggplot2`
-- `viridis`
-- `beepr`
-- `here`
+The following packages are required:
 
-The script automatically installs missing packages and loads them at the beginning of the analysis.
+* `openxlsx`
+* `readxl`
+* `writexl`
+* `dplyr`
+* `tidyr`
+* `purrr`
+* `tibble`
+* `scales`
+* `broom.mixed`
+* `glmmTMB`
+* `vegan`
+* `spaa`
+* `bipartite`
+* `funspace`
+* `car`
+* `performance`
+* `ggplot2`
+* `viridis`
+* `beepr`
+* `here`
 
-## How to Run
+The script was developed for R and is intended to be run using a recent version of R and RStudio.
 
-1. Install [R](https://www.r-project.org/) and preferably [RStudio](https://posit.co/download/rstudio/).
-2. Clone or download this repository.
-3. Ensure that `Script.R` and `Dataset_Hcanariensis.xlsx` are located in the same directory.
-4. Open the script in RStudio.
-5. Run the script from the beginning.
+---
 
-The script automatically prepares the working environment, loads the datasets, performs the analyses, and exports the results.
+## Contact
 
-## Input Data
+For questions regarding the analyses, data, or code: *a.ferrari.research@gmail.com*
 
-The script requires the file:
-
-`Dataset_Hcanariensis.xlsx`
-
-The Excel workbook contains the following sheets:
-
-- `Metadata`
-- `Hives`
-- `Emergence`
-- `Productivity`
-- `Morphology`
-- `CHC`
-- `Network`
-
-## Outputs
-
-The analyses generate figures and statistical results, which are saved in the following directories:
-
-### Figures
-PDF files containing:
-- Productivity and sex-specific patterns.
-- Developmental dynamics.
-- Morphological trait relationships and NMDS ordinations.
-- Functional richness comparisons.
-- CHC diversity and composition patterns.
-- Plant–insect interaction networks.
-
-### Results
-Statistical outputs in `.txt` and `.xlsx` formats, including:
-- GLM and GLMM summaries.
-- Morphological and CHC model results.
-- PERMANOVA and multivariate dispersion results.
-- SIMPER outputs.
-- Summary statistics.
-
-## Reproducibility
-
-A random seed (`set.seed(123)`) is specified for multivariate ordination analyses to improve reproducibility.
-
-All analyses are conducted using the data contained in the provided Excel workbook.
+---
 
 ## Citation
 
-If you use this code, please cite the associated scientific publication:
-
-*Citation details to be added.*
-
-## License
-
-A license has not yet been specified for this repository.
-
-
+If you use this code or dataset, please cite the associated publication.
